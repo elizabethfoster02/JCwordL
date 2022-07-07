@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/jclWordle/static/css/main.df2f1ebb.css",
+    "main.js": "/jclWordle/static/js/main.62259f7d.js",
+    "static/js/787.047ed14f.chunk.js": "/jclWordle/static/js/787.047ed14f.chunk.js",
+    "index.html": "/jclWordle/index.html",
+    "main.df2f1ebb.css.map": "/jclWordle/static/css/main.df2f1ebb.css.map",
+    "main.62259f7d.js.map": "/jclWordle/static/js/main.62259f7d.js.map",
+    "787.047ed14f.chunk.js.map": "/jclWordle/static/js/787.047ed14f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.df2f1ebb.css",
+    "static/js/main.62259f7d.js"
+  ]
+}
