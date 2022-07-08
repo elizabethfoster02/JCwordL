@@ -188,6 +188,7 @@ function App() {
               type="button"
               className="flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded text-purple-700 bg-purple-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 select-none"
             >
+              {console.log(solution)}
               {isLatin(solution) === true ? 'Latin' : 'English'}
             </button>
           ) : (

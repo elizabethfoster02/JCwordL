@@ -8,7 +8,7 @@ export function isLatin(answer: string) {
   }
 
   console.log(latinSet.has(answer))
-  if (latinSet.has(answer)) {
+  if (!latinSet.has(answer)) {
     return true
   } else {
     return false
