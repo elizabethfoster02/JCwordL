@@ -20,10 +20,6 @@ export const shareStatus = (
           }/6\n\n` + generateEmojiGrid(guesses)
         )
   }
-  // navigator.clipboard.writeText(
-  //   `JCL Wordle ${solutionIndex} ${lost ? 'X' : guesses.length}/6\n\n` +
-  //     generateEmojiGrid(guesses)
-  // )
 }
 
 export const generateEmojiGrid = (guesses: string[]) => {
