@@ -10,43 +10,44 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
   return (
     <BaseModal title="How to play" isOpen={isOpen} handleClose={handleClose}>
       <p className="text-sm text-gray-500">
-        Guess the word in 6 tries. Possible wordle answers are all Latin words
-        (and inflections) from any time period (ie. Classical, Archaic,
-        Neo-Latin). After each guess, the color of the tiles will change to show
-        how close your guess was to the word.
+        Guess the word in 6 tries. Possible wordle answers include all English
+        words and all Latin words (and inflections). All answers have some
+        connection to the National Junior Classical League's annual convention.
+        After each guess, the color of the tiles will change to show how close
+        your guess was to the word.
       </p>
 
       <div className="flex justify-center mb-1 mt-4">
-        <Cell value="C" status="correct" />
-        <Cell value="A" />
-        <Cell value="N" />
+        <Cell value="A" status="correct" />
+        <Cell value="U" />
+        <Cell value="D" />
         <Cell value="I" />
-        <Cell value="S" />
-      </div>
-      <p className="text-sm text-gray-500">
-        The letter C is in the word and in the correct spot.
-      </p>
-
-      <div className="flex justify-center mb-1 mt-4">
-        <Cell value="A" />
-        <Cell value="M" />
-        <Cell value="A" />
-        <Cell value="R" status="present" />
-        <Cell value="E" />
-      </div>
-      <p className="text-sm text-gray-500">
-        The letter R is in the word but in the wrong spot.
-      </p>
-
-      <div className="flex justify-center mb-1 mt-4">
-        <Cell value="P" />
-        <Cell value="U" status="absent" />
-        <Cell value="E" />
-        <Cell value="R" />
         <Cell value="O" />
       </div>
       <p className="text-sm text-gray-500">
-        The letter U is not in the word in any spot.
+        The letter A is in the word and in the correct spot.
+      </p>
+
+      <div className="flex justify-center mb-1 mt-4">
+        <Cell value="D" />
+        <Cell value="I" />
+        <Cell value="S" />
+        <Cell value="C" status="present" />
+        <Cell value="O" />
+      </div>
+      <p className="text-sm text-gray-500">
+        The letter C is in the word but in the wrong spot.
+      </p>
+
+      <div className="flex justify-center mb-1 mt-4">
+        <Cell value="S" />
+        <Cell value="C" status="absent" />
+        <Cell value="L" />
+        <Cell value="E" />
+        <Cell value="R" />
+      </div>
+      <p className="text-sm text-gray-500">
+        The letter C is not in the word in any spot.
       </p>
     </BaseModal>
   )

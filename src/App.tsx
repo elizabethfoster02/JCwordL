@@ -12,8 +12,10 @@ import { Keyboard } from './components/keyboard/Keyboard'
 import { AboutModal } from './components/modals/AboutModal'
 import { InfoModal } from './components/modals/InfoModal'
 import { WinModal } from './components/modals/WinModal'
-import { SignupModal } from './components/modals/SignupModal'
 import { StatsModal } from './components/modals/StatsModal'
+import { HardModal } from './components/modals/HardModal'
+import { isLatin } from './constants/latinSet'
+
 import { ThemeContext } from './ThemeProvider'
 import {
   isWordInWordList,
@@ -33,10 +35,11 @@ function App() {
   const [currentGuess, setCurrentGuess] = useState('')
   const [isGameWon, setIsGameWon] = useState(false)
   const [isGameLost, setIsGameLost] = useState(false)
+  const [isGameHard, setIsGameHard] = useState(true)
+  const [isHardModalOpen, setIsHardModalOpen] = useState(false)
   const [isWinModalOpen, setIsWinModalOpen] = useState(false)
   const [isInfoModalOpen, setIsInfoModalOpen] = useState(false)
   const [isAboutModalOpen, setIsAboutModalOpen] = useState(false)
-  const [isSignupModalOpen, setIsSignupModalOpen] = useState(false)
   const [isNotEnoughLetters, setIsNotEnoughLetters] = useState(false)
   const [isStatsModalOpen, setIsStatsModalOpen] = useState(false)
   const [isWordNotFoundAlertOpen, setIsWordNotFoundAlertOpen] = useState(false)
@@ -75,24 +78,6 @@ function App() {
   })
 
   const [stats, setStats] = useState(() => loadStats())
-
-  // Logic to show the signup modal
-  useEffect(() => {
-    let pageViews: Number
-
-    if (!localStorage.getItem('pageViews')) {
-      localStorage.setItem('pageViews', '1')
-      return
-    } else {
-      pageViews = parseInt(localStorage.getItem('pageViews')!) + 1
-      localStorage.setItem('pageViews', pageViews.toString())
-    }
-
-    if (pageViews > 3 && !localStorage.getItem('hasSignedUp')) {
-      setIsSignupModalOpen(true)
-      localStorage.setItem('pageViews', '0')
-    }
-  }, [])
 
   useEffect(() => {
     saveGameStateToLocalStorage({ guesses, solution })
@@ -171,16 +156,8 @@ function App() {
       <div className="py-8 max-w-7xl mx-auto sm:px-6 lg:px-8">
         <div className="flex w-80 mx-auto items-center mb-8">
           <div className="ml-2.5 grow">
-            <h1 className="text-xl font-bold">Latin Wordle </h1>
-            by{' '}
-            <a
-              href="https://www.latindictionary.io"
-              target="_blank"
-              rel="noopenner noreferrer"
-              className="font-bold"
-            >
-              latindictionary.io
-            </a>
+            <h1 className="text-xl font-bold">JCL Wordle </h1>
+            by Elizabeth Foster
           </div>
           <InformationCircleIcon
             className="h-6 w-6 cursor-pointer"
@@ -205,6 +182,32 @@ function App() {
               <MoonIcon className="h-6 w-6 -ml-2" />
             </button>
           )}
+          {/* Easy vs Hard Mode Section */}
+          {isGameHard === false ? (
+            <button
+              type="button"
+              className="flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded text-purple-700 bg-purple-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 select-none"
+            >
+              {console.log(solution)}
+              {isLatin(solution) === true ? 'Latin' : 'English'}
+            </button>
+          ) : (
+            <button
+              type="button"
+              className="flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded text-purple-700 bg-purple-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 select-none"
+              onClick={() => setIsHardModalOpen(true)}
+            >
+              <HardModal
+                isOpen={isHardModalOpen}
+                handleClose={() => setIsHardModalOpen(false)}
+                handleModeChange={() => {
+                  setIsHardModalOpen(false)
+                  setIsGameHard(false)
+                }}
+              />
+              hard mode
+            </button>
+          )}
         </div>
         <Grid guesses={guesses} currentGuess={currentGuess} />
         <Keyboard
@@ -224,6 +227,7 @@ function App() {
               setShareComplete(false)
             }, 2000)
           }}
+          isGameHard={isGameHard}
         />
         <InfoModal
           isOpen={isInfoModalOpen}
@@ -247,10 +251,6 @@ function App() {
           isOpen={isAboutModalOpen}
           handleClose={() => setIsAboutModalOpen(false)}
         />
-        <SignupModal
-          isOpen={isSignupModalOpen}
-          handleClose={() => setIsSignupModalOpen(false)}
-        />
 
         <div className="flex justify-center gap-3 mt-8">
           <button
@@ -258,7 +258,7 @@ function App() {
             className="flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 select-none"
             onClick={() => setIsAboutModalOpen(true)}
           >
-            About
+            about
             <InformationCircleIcon className="h-4 w-4 ml-1.5" />
           </button>
           {/* <Tooltip tooltipText="Restart after winning or losing"> */}
@@ -267,7 +267,7 @@ function App() {
             className="flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded text-red-700 bg-red-100 hover:bg-red-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 select-none"
             onClick={onReset}
           >
-            Restart
+            restart
             <RefreshIcon className="ml-1.5 h-4 w-4" />
           </button>
           {/* </Tooltip> */}
