@@ -13,6 +13,9 @@ import { AboutModal } from './components/modals/AboutModal'
 import { InfoModal } from './components/modals/InfoModal'
 import { WinModal } from './components/modals/WinModal'
 import { StatsModal } from './components/modals/StatsModal'
+import { HardModal } from './components/modals/HardModal'
+import { isLatin } from './constants/latinSet'
+
 import { ThemeContext } from './ThemeProvider'
 import {
   isWordInWordList,
@@ -32,6 +35,8 @@ function App() {
   const [currentGuess, setCurrentGuess] = useState('')
   const [isGameWon, setIsGameWon] = useState(false)
   const [isGameLost, setIsGameLost] = useState(false)
+  const [isGameHard, setIsGameHard] = useState(true)
+  const [isHardModalOpen, setIsHardModalOpen] = useState(false)
   const [isWinModalOpen, setIsWinModalOpen] = useState(false)
   const [isInfoModalOpen, setIsInfoModalOpen] = useState(false)
   const [isAboutModalOpen, setIsAboutModalOpen] = useState(false)
@@ -175,6 +180,31 @@ function App() {
               className="text-black dark:text-white focus:outline-none shadow-none p-2 text-lg rounded-full outline-none ring-transparent cursor-pointer"
             >
               <MoonIcon className="h-6 w-6 -ml-2" />
+            </button>
+          )}
+          {/* Easy vs Hard Mode Section */}
+          {isGameHard === false ? (
+            <button
+              type="button"
+              className="flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded text-purple-700 bg-purple-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 select-none"
+            >
+              {isLatin(solution) === true ? 'Latin' : 'English'}
+            </button>
+          ) : (
+            <button
+              type="button"
+              className="flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded text-purple-700 bg-purple-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 select-none"
+              onClick={() => setIsHardModalOpen(true)}
+            >
+              <HardModal
+                isOpen={isHardModalOpen}
+                handleClose={() => setIsHardModalOpen(false)}
+                handleModeChange={() => {
+                  setIsHardModalOpen(false)
+                  setIsGameHard(false)
+                }}
+              />
+              hard mode
             </button>
           )}
         </div>
