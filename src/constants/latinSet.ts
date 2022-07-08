@@ -6,9 +6,9 @@ export function isLatin(answer: string) {
   for (let i = 0; i < VALIDGUESSES.length; i++) {
     latinSet.add(VALIDGUESSES[i].toUpperCase())
   }
-  if (latinSet.has(answer)) {
-    return true
-  } else {
+  if (!latinSet.has(answer)) {
     return false
+  } else {
+    return true
   }
 }

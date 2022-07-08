@@ -207,6 +207,7 @@ export const WORDS = [
   'dorms',
   'creed',
   'fargo',
+  'myths',
   'salve',
   'miami',
   'togas',
