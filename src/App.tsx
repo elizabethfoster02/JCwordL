@@ -246,6 +246,7 @@ function App() {
               setShareComplete(false)
             }, 2000)
           }}
+          isGameHard={isGameHard}
         />
         <AboutModal
           isOpen={isAboutModalOpen}

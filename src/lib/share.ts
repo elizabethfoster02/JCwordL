@@ -1,11 +1,29 @@
 import { getGuessStatuses } from './statuses'
 import { solutionIndex } from './words'
 
-export const shareStatus = (guesses: string[], lost: boolean) => {
-  navigator.clipboard.writeText(
-    `Latin Wordle ${solutionIndex} ${lost ? 'X' : guesses.length}/6\n\n` +
-      generateEmojiGrid(guesses)
-  )
+export const shareStatus = (
+  guesses: string[],
+  lost: boolean,
+  isGameHard: boolean
+) => {
+  // eslint-disable-next-line no-lone-blocks
+  {
+    isGameHard
+      ? navigator.clipboard.writeText(
+          `JCL Wordle: Hard Mode ${solutionIndex - 187} ${
+            lost ? 'X' : guesses.length
+          }/6\n\n` + generateEmojiGrid(guesses)
+        )
+      : navigator.clipboard.writeText(
+          `JCL Wordle: Easy Mode ${solutionIndex - 187} ${
+            lost ? 'X' : guesses.length
+          }/6\n\n` + generateEmojiGrid(guesses)
+        )
+  }
+  // navigator.clipboard.writeText(
+  //   `JCL Wordle ${solutionIndex} ${lost ? 'X' : guesses.length}/6\n\n` +
+  //     generateEmojiGrid(guesses)
+  // )
 }
 
 export const generateEmojiGrid = (guesses: string[]) => {
@@ -17,7 +35,7 @@ export const generateEmojiGrid = (guesses: string[]) => {
         .map((letter, i) => {
           switch (status[i]) {
             case 'correct':
-              return '🟩'
+              return '🟪'
             case 'present':
               return '🟨'
             default:
