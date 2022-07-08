@@ -1,5 +1,6 @@
 export const WORDS = [
-  'elego',
+  'dance',
+  'togae',
   'swamp',
   'latin',
   'torch',
@@ -24,13 +25,10 @@ export const WORDS = [
   'books',
   'forum',
   'emory',
-  'dance',
   'domus',
-  'togae',
   'humid',
   'marsh',
   'gator',
-  'elegi',
   'cheer',
   'chant',
 
