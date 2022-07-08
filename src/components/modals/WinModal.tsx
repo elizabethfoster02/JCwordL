@@ -3,22 +3,21 @@ import { CheckIcon } from '@heroicons/react/outline'
 import { MiniGrid } from '../mini-grid/MiniGrid'
 import { shareStatus } from '../../lib/share'
 import { BaseModal } from './BaseModal'
-import { solution } from '../../lib/words'
 
 type Props = {
   isOpen: boolean
   handleClose: () => void
   guesses: string[]
   handleShare: () => void
+  isGameHard: boolean
 }
-
-const DefinitionURL = `https://www.latindictionary.io/words/?word=${solution}`
 
 export const WinModal = ({
   isOpen,
   handleClose,
   guesses,
   handleShare,
+  isGameHard,
 }: Props) => {
   return (
     <BaseModal title="You won!" isOpen={isOpen} handleClose={handleClose}>
@@ -35,16 +34,7 @@ export const WinModal = ({
             <MiniGrid guesses={guesses} />
           </div>
           <div className="mt-4 dark:text-white">
-            View the definition of {solution} on{' '}
-            <a
-              href={DefinitionURL}
-              target="_blank"
-              rel="noopenner noreferrer"
-              className="font-bold"
-            >
-              latindictionary.io
-            </a>
-            .
+            {isGameHard ? 'Congrats! You won in hard mode!' : 'Congrats!'}
           </div>
         </div>
       </div>

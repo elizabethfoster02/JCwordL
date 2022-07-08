@@ -9,7 +9,7 @@ type Props = {
 export const HardModal = ({ isOpen, handleClose, handleModeChange }: Props) => {
   return (
     <BaseModal
-      title="Set Difficulty Mode"
+      title="set difficulty mode"
       isOpen={isOpen}
       handleClose={handleClose}
     >
@@ -22,7 +22,7 @@ export const HardModal = ({ isOpen, handleClose, handleModeChange }: Props) => {
 
       <h4 className="text-md leading-6 font-medium text-gray-900 dark:text-white mt-6">
         {' '}
-        Default Mode
+        default mode
       </h4>
       <p className="text-xs text-gray-500 dark:text-gray-300">
         All players begin in hard mode and can change to Easy Mode to see the
@@ -38,7 +38,7 @@ export const HardModal = ({ isOpen, handleClose, handleModeChange }: Props) => {
         className="items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded text-purple-700 bg-purple-100 hover:bg-purple-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 select-none"
         onClick={() => handleModeChange()}
       >
-        Switch to Easy Mode
+        switch to easy mode
       </button>
     </BaseModal>
   )

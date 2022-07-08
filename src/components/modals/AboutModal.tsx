@@ -7,7 +7,7 @@ type Props = {
 
 export const AboutModal = ({ isOpen, handleClose }: Props) => {
   return (
-    <BaseModal title="About" isOpen={isOpen} handleClose={handleClose}>
+    <BaseModal title="about" isOpen={isOpen} handleClose={handleClose}>
       <p className="text-sm text-gray-500 dark:text-gray-300">
         This is an implementation of Wordle in both Latin and English themed for
         the 2022 National Junior Classical League Convention -{' '}
@@ -30,7 +30,7 @@ export const AboutModal = ({ isOpen, handleClose }: Props) => {
         </a>
       </p>
       <h4 className="text-lg leading-6 font-medium text-gray-900 dark:text-white mt-6">
-        Acknowledgement
+        acknowledgement
       </h4>
       <p className="text-sm text-gray-500 dark:text-gray-300">
         This application is sourced from latindictionary.io's implementation of
@@ -39,7 +39,7 @@ export const AboutModal = ({ isOpen, handleClose }: Props) => {
         Github.
       </p>
       <h4 className="text-lg leading-6 font-medium text-gray-900 dark:text-white mt-6">
-        Report a Problem
+        report a problem
       </h4>
       <p className="text-sm text-gray-500 dark:text-gray-300">
         If you find a problem, please contact{' '}

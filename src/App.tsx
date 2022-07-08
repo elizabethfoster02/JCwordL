@@ -157,7 +157,7 @@ function App() {
         <div className="flex w-80 mx-auto items-center mb-8">
           <div className="ml-2.5 grow">
             <h1 className="text-xl font-bold">JCL Wordle </h1>
-            by Elizabeth Foster, NSCL Editor
+            by Elizabeth Foster
           </div>
           <InformationCircleIcon
             className="h-6 w-6 cursor-pointer"
@@ -227,6 +227,7 @@ function App() {
               setShareComplete(false)
             }, 2000)
           }}
+          isGameHard={isGameHard}
         />
         <InfoModal
           isOpen={isInfoModalOpen}
@@ -257,7 +258,7 @@ function App() {
             className="flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 select-none"
             onClick={() => setIsAboutModalOpen(true)}
           >
-            About
+            about
             <InformationCircleIcon className="h-4 w-4 ml-1.5" />
           </button>
           {/* <Tooltip tooltipText="Restart after winning or losing"> */}
@@ -266,7 +267,7 @@ function App() {
             className="flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded text-red-700 bg-red-100 hover:bg-red-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 select-none"
             onClick={onReset}
           >
-            Restart
+            restart
             <RefreshIcon className="ml-1.5 h-4 w-4" />
           </button>
           {/* </Tooltip> */}
