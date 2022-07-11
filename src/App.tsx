@@ -22,7 +22,6 @@ import {
   isWinningWord,
   solution,
   tomorrow,
-  getLatinDefinition,
 } from './lib/words'
 import { addStatsForCompletedGame, loadStats } from './lib/stats'
 import {
@@ -38,7 +37,7 @@ function App() {
   const [isGameHard, setIsGameHard] = useState(true)
   const [isHardModalOpen, setIsHardModalOpen] = useState(false)
   const [isWinModalOpen, setIsWinModalOpen] = useState(false)
-  const [isInfoModalOpen, setIsInfoModalOpen] = useState(false)
+  const [isInfoModalOpen, setIsInfoModalOpen] = useState(true)
   const [isAboutModalOpen, setIsAboutModalOpen] = useState(false)
   const [isNotEnoughLetters, setIsNotEnoughLetters] = useState(false)
   const [isStatsModalOpen, setIsStatsModalOpen] = useState(false)
@@ -279,11 +278,10 @@ function App() {
         <Alert
           message={`
               <a
-                href=${getLatinDefinition(solution)}
                 target="_blank"
                 rel="noopenner noreferrer"
               >
-                You lost. The correct word was ${solution}. Click here to see the definition of ${solution} on latindictionary.io.
+                You lost. The correct word was ${solution}. 
               </a>`}
           isOpen={isGameLost}
         />

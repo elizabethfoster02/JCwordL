@@ -191,7 +191,6 @@ export const WORDS = [
   'dance',
   'togae',
   'swamp',
-  'latin',
   'torch',
   'canto',
   'ludus',

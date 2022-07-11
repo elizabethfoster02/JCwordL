@@ -11,10 +11,10 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
     <BaseModal title="How to play" isOpen={isOpen} handleClose={handleClose}>
       <p className="text-sm text-gray-500">
         Guess the word in 6 tries. Possible wordle answers include all English
-        words and all Latin words (and inflections). All answers have some
-        connection to the National Junior Classical League's annual convention.
-        After each guess, the color of the tiles will change to show how close
-        your guess was to the word.
+        words and all Latin words. All answers have some connection to the
+        National Junior Classical League's annual convention. After each guess,
+        the color of the tiles will change to show how close your guess was to
+        the word.
       </p>
 
       <div className="flex justify-center mb-1 mt-4">
