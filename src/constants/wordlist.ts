@@ -204,6 +204,16 @@ export const WORDS = [
   'elect',
   'votes',
   'dorms',
+
+  'swamp',
+  'amici',
+  'torch',
+  'cajun',
+  'canto',
+  'myths',
+  'valve',
+  'gator',
+
   'creed',
   'fargo',
   'myths',
