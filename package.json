@@ -2,7 +2,7 @@
   "name": "latin-wordle",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://elizabethfoster02.github.io/JCLwordL",
+  "homepage": "https://elizabethfoster02.github.io/JCwordL",
   "dependencies": {
     "@headlessui/react": "^0.0.0-dev.0ce63d8",
     "@heroicons/react": "^1.0.5",
