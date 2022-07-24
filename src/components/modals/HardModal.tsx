@@ -14,7 +14,7 @@ export const HardModal = ({ isOpen, handleClose, handleModeChange }: Props) => {
       handleClose={handleClose}
     >
       <p className="text-xs text-gray-500 dark:text-gray-300">
-        The JCL Wordle has two different modes of difficulty. There are a lot of
+        The JCwordL has two different modes of difficulty. There are a lot of
         answers when both English and Latin words can be guessed. Easy Mode
         allows players to see what language the answer is in. Difficult Mode
         requires players to consider words in both English and Latin.
