@@ -155,7 +155,7 @@ function App() {
       <div className="py-8 max-w-7xl mx-auto sm:px-6 lg:px-8">
         <div className="flex w-80 mx-auto items-center mb-8">
           <div className="ml-2.5 grow">
-            <h1 className="text-xl font-bold">jclWordle </h1>
+            <h1 className="text-xl font-bold">JCwordL </h1>
             by Elizabeth Foster
           </div>
           <InformationCircleIcon

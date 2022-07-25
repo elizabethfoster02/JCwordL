@@ -10,12 +10,12 @@ export const shareStatus = (
   {
     isGameHard
       ? navigator.clipboard.writeText(
-          `jclWordle: Hard Mode ${solutionIndex - 187} ${
+          `JCwordL: Hard Mode ${solutionIndex - 187} ${
             lost ? 'X' : guesses.length
           }/6\n\n` + generateEmojiGrid(guesses)
         )
       : navigator.clipboard.writeText(
-          `jclWordle: Easy Mode ${solutionIndex - 187} ${
+          `JCwordL: Easy Mode ${solutionIndex - 187} ${
             lost ? 'X' : guesses.length
           }/6\n\n` + generateEmojiGrid(guesses)
         )
