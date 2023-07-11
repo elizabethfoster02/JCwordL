@@ -559,6 +559,7 @@ export const WORDS = [
   'ullus',
   'missi',
   'venia',
+  'peach',
   'morae',
   'sitis',
   'ocius',
