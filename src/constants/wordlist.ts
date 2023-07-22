@@ -571,7 +571,21 @@ export const WORDS = [
   'inops',
   'debui',
   'notae',
+  // this is saturday
+  'greek',
+  // sunday
+  'emory',
+  // monday
+  'maria',
+  // tuesday
+  'hades',
+  // wednesday
+  'sweat',
+  // thursday
   'peach',
+  // friday
+  'pepsi',
+  // saturday
   'sella',
   'absit',
   'timeo',
